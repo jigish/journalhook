@@ -13,6 +13,7 @@ type JournalHook struct{}
 
 var (
 	severityMap = map[logrus.Level]journal.Priority{
+		logrus.TraceLevel: journal.PriDebug,
 		logrus.DebugLevel: journal.PriDebug,
 		logrus.InfoLevel:  journal.PriInfo,
 		logrus.WarnLevel:  journal.PriWarning,
@@ -71,6 +72,7 @@ func (hook *JournalHook) Levels() []logrus.Level {
 		logrus.WarnLevel,
 		logrus.InfoLevel,
 		logrus.DebugLevel,
+		logrus.TraceLevel,
 	}
 }
 
